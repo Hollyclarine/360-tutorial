@@ -1,28 +1,41 @@
-## 360˚ WebVR Virtual Tour Tutorial
+## 360˚ WebVR Virtual Tour Workshop
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+This app and tutorial were created by Shalini Sejwani ([@smsejwan](https://github.com/smsejwan)). The tutorial was adapted for a workshop at NCSU Libraries by Alison Blaine ([@alblaine](https://github.com/alblaine)) and Pete Schreiner ([@peaceshrine](https://github.com/peaceshrine)).
 
 ### Introduction
-The webpage you’re looking at is called a “GitHub repository,” and it contains the files you'll use to build the virtual tool. Look at the folder structure and mentally note the names of the the folders.
+The goal of this workshop is to create a virtual gallery of 360-degree photos that can be viewed in a VR headset. Here's an example of what the virtual gallery might look like:
 
-Once you have looked at them, let's get started.
+<a href="https://pages.github.ncsu.edu/smsejwan/360-demo/index.html"><img src="assets/example.png" width="500"></img></a>
 
-### Create an NCSU Github account
-If you do not already have an NCSU Github account, create one [here](https://github.ncsu.edu)
+Required preparation:
+* Create a Github account at [https://github.com](https://github.com)
+
+The webpage you’re looking at is called a “GitHub repository,” and it contains the files you'll use to build the virtual tour. Look at the folder structure and mentally note the names of the the folders.
+
+Once you have looked at them, let's get started!
+
+### Tutorial Videos on YouTube
+This [set of tutorial videos at go.ncsu.edu/360playlist ](https://go.ncsu.edu/360playlist) accompanies this tutorial and is designed to help you see the steps in action. There is a video for each workshop task. It's best to open the video link in a new browser so that you can look at the videos and also edit the code.
+
+### Create a Github account
+If you do not already have a Github account, create one [here](https://github.com)
 
 Log into your account.
 
-### Fork the code repository
+### Fork the code repository ([helper video](https://youtu.be/yZmi2VQp4Mw?t=12))
 A fork is like a copy of someone else's code repository that you can make changes to without affecting the original repository.
 
-Navigate to [https://github.com/smsejwan/360-tutorial](https://github.com/smsejwan/360-tutorial)
-
-Click the "Fork" button in the top right of the page:
+Click the "Fork" button in the top right of this page:
 ![](assets/fork.png)
+
+Select your repository as the place to fork it.
 
 You should now have this code repository in your own Github account at the following address (replace YOUR_USERNAME with your Github account name):
 
 https://github.com/Your_Username/360-tutorial
 
-### Create a Github page for your project
+### Create a Github page for your project ([helper video](https://youtu.be/yZmi2VQp4Mw?t=35))
 Click on Settings
 
 Under Github Pages, click the dropdown menu under Source. Change to **master branch**
@@ -31,19 +44,22 @@ Under Github Pages, click the dropdown menu under Source. Change to **master bra
 
 This will create a new web page where you can see your gallery live!
 
-### Learn to make your own gallery
+Refresh the settings page.
 
-Open this link in a **new tab** to see what your gallery currently looks like, replacing YOUR_USERNAME with your Github username:
+A green link should appear that looks like this:
+
+![](readme_files/published.png)
+
+Open your Github Pages link in a **new tab** to see your current 360 VR gallery.
 https://pages.github.com/Your_Username/360-tutorial
 
-![Incomplete gallery](/readme_files/incompletegallery.png "Incomplete gallery")
+### Learn to make your own gallery
+This demo gallery only has 2 images. This workshop is going to guide you through adding **one new image** to the two that are already in the gallery. After the workshop, you can add more images on your own!
 
-As you can see, it's not quite similar to the gallery we saw previously in the Google Cardboard.  
-We just have 2 images here instead of 6.
+<img src="/readme_files/incompletegallery.png" width="500"></img>
 
-So to fix this, we need to add the remaining 4 images to this page.
+### Task 1: Upload image to the assets folder ([helper video](https://youtu.be/Sr0En2GScTg))
 
-### Task 1: Add images to the assets folder
 The first task is to upload the images you just clicked in the asset folder.
 
 If you don't have images you can use these images from a Google Drive folder. Download these [360 images](https://drive.google.com/open?id=0B7icOoMjnbmPZDBjVFAycHN4a3c) to your Desktop to use them.
@@ -52,27 +68,32 @@ Open the [*assets*](https://github.com/Your_Username/360-tutorial/tree/master/as
 
 ![Select assets](/readme_files/assetsselect.jpg "Select assets")
 
-Rename the images to something you can easily remember. (for example a.jpg, b.jpg, etc...)
+We already have two images in the gallery, and we will keep those. Rename your image you want to add to the following: **3.jpg**.
 
 Then click on ‘Upload files’ button.
 ![Upload files](/readme_files/upload.jpg "Upload files")
 
-Upload all the images (i.e., 3.jpg, 4.jpg, 5.jpg and 6.jpg) that you just clicked or downloaded.
+**Upload the new image to the assets folder** (3.jpg).
 
-After you are done uploading the images to the ‘assets’ folder, go to the [gallery.html](https://github.com/Your_Username/360-tutorial/blob/master/gallery.html) in your repository.
+After you are done uploading the image to the ‘assets’ folder, go to the [gallery.html](https://github.com/Your_Username/360-tutorial/blob/master/gallery.html) in your repository.
 
 Click on the edit button.
 ![Cick at edit in gallery.html](/readme_files/galleryselectedit.jpg "Edit gallery.html")
 
-Add some code in here to be able to see the remaining images.
+In the next task, you will add some code in here to be able to see your new image.
 
-### Task 2: Add Assets for remaining images.
-We place all our assets in one place for better performance.
+
+### Task 2: Edit gallery.html file to add your image as an asset. ([helper video](https://youtu.be/CmrXa2nGlzo))
+Place all your assets in one place for better performance.
+
+Click on the 360-tutorial link at the top left of the page to go back to the list of files.
+
+Click on gallery.html
 
 Look at lines 16 to 24 in the gallery.html file for reference
 ![Line 16 to 24](/readme_files/Line16-24.png "Line 16 to 24")
 
-We place asset files (i.e., the photos) between these bracketed phrases ```<a-assets> </a-assets>```
+Place asset files (i.e., the photos) between these bracketed phrases ```<a-assets> </a-assets>```
 
 The code for adding an asset looks like this:
 ```html
@@ -80,21 +101,20 @@ The code for adding an asset looks like this:
 <img id="second" src="assets/2.jpg">
 ```
 
-We need to add assets for the remaining images that we just uploaded to our assets folder so that they look similar.
+You need to add an asset in the code for your image that you just uploaded.
 
 Go to gallery.html and start adding assets on line 19 in gallery.html file.
 
-Note that each img id must be different. Use this pattern: For 1st image: id="first" and for the second image: id="second" etc.)
+Note that each img id must be different. Use this pattern: For 1st image: id="first" and for the second image: id="second" etc.) For your image, you can type id="third".
 
 The src needs to show the location (in the assets folder) and name of the file: "assets/imagename.jpg" (Example: src=”assets/1.jpg”)
 
 *Hint: You can look at the assets already added for other images at lines 17 and 18.*
 
-When you've done this for the 4 new images, scroll to the bottom of the page and press the green commit button.
+When you've done this for your image, scroll to the bottom of the page and press the green commit button.
 
-
-### Task 3: Add the curved-image components for remaining images.
-We have now linked our images to our webpage, Our next task is to display them.
+### Task 3: Add the curved-image component for the new image. ([helper video](https://youtu.be/1SlEnwxlCOI))
+You have now linked your image to our webpage. Your next task is to display them.
 To display them, we need to add a line like:
 
 ```html
@@ -115,7 +135,7 @@ position="0 0.8 0">
 **Theta-length:** is the length occupied by the image in a circle. Circumference of the circle is 360 and here we have 6 images, and we are giving a theta length of 40 to each and there is a distance of 10 degrees between each image to keep them separated.  
 **Position:** We are placing our 1st image at the position “0 280 0” moving along the y axis, we reduce the degree 50 (40 degree is space occupied by each image + 10 degree for distance between each image) so the position of our *second image will be “0 230 0”* and similarly for *third image it will be “0 180 0”* and so on.  
 
-Here the properties **“id”**, **“src”** and **“rotation”**  need to be changed for each image.
+Here the properties **“id”**, **“src”** and **“rotation”**  need to be changed for each new image.
 
 Refer to line 30 to 39 in gallery.html and add similar lines there.  
 ![Line 30 to 39](/readme_files/Line30-39.png "Line 30 to 39")
@@ -136,30 +156,30 @@ Example: If your asset is:
  See that id in assets is same as src in your curved-image component.
  Start adding code at line 38.
 
- Once you’ve changed the code in **gallery.html**, click on this link to make sure the images appears: https://pages.github.ncsu.edu/smsejwan/360-tutorial/gallery.html
+ Once you’ve changed the code in **gallery.html**, click on this link to make sure the image appears: https://pages.github.ncsu.edu/YOUR_USERNAME/360-tutorial/gallery.html
 
- If Images do not appear we can help you troubleshoot.
+ If the image does not appear, we can help you troubleshoot.
 
-### Task 4: Our next task is to add 360 image file for each image to Demo folder.
+### Task 4: Add the 360 image file to a Demo folder. ([helper video](https://youtu.be/WbdNPDK2rak))
 
 Go to https://github.com/Your_Username/360-tutorial/tree/master/demos
 
-Here we have to create a folder for each 360 view.
-As you can see there are already 6 folders created in this view.
+There needs to be a folder for each 360 image. Each folder has its own .html file, javascript, and assets folder.
 
-We need to go to each folder and make two changes.
-The first change is in /demos/1/assets/
-Add your image that is the 1st image in your gallery.
+As you can see, there are already 6 folders created in this view, to make it easier to add a total of 6 images in the gallery.
 
-The second change: Open https://github.com/Your_Username/360-tutorial/blob/master/demos/1/index.html
-And add Assets for our image and change the corresponding component.
-And make the necessary change on line 13 and 31 of the above file.
+Since you are adding a third image to the gallery, you will need to go into folder 3 and make two changes:
+The first change is in /demos/3/assets/. Click on the assets folder inside of folder 3.
+
+Add your image (3.jpg) by uploading it to the assets folder. Click "Upload files" button and select 3.jpg from your computer. Commit this change.
+
+The second change: Now go into Folder 3 and open the index.html file.
 
 At line 13:
 ```
 <img id="background" src="assets/1-bg.jpg">
 ```
-Change 1-bg to the name of image you just added to the assets folder.
+Change *1-bg* to the name of image you just added to the assets folder. (Ex: 3.jpg)
 
 And at line 31:
 ```
@@ -167,46 +187,56 @@ And at line 31:
  ```
 Make sure your id in line 13 is similar to your src on your line 31, in this case, id="background" and src="assets"
 
-Here on line 31:
-We are changing a component ``` <a-sky> ```
-The sky primitive adds a background color or 360° image to a scene. A sky is a large sphere with a color or texture mapped to the inside.
+Explanation of line 31:
+The component ``` <a-sky> ``` adds a background color or 360° image to a scene. A sky is a large sphere with a color or texture mapped to the inside.
 
-### Task 5: Add Link to the demos in gallery.html
-Now We need to then connect these images to their 360 view. To do so we use Javascript.
-You can refer the code below, How we link the first image to its 360 view
+### Task 5: Add Link to the demos in gallery.html ([helper video](https://youtu.be/WbdNPDK2rak?list=PLFtxGQKkdHa03RFEyUhgHShPm9llCDncL&t=87))
+Now you need to connect the image in the gallery to its 360 view. To do so you will use javascript.
+You can refer the code below, which shows an example of how the first image is linked to its 360 view
 ```
 document.querySelector("#one").addEventListener('click', function() {
                 window.location.href = "demos/1/index.html";
             });
 ```
 
-As you notice, #one is the id you use while adding the components for the assets.
-Now to finish the Task 5 you need to add similar code for the 4 images that you just added.
+Now to finish the Task 5 you need to add similar code for the images that you just added.
 
 REMEMBER: That the id used in the curved-image component should be similar to the querySelector in your javascript.
 
-Example: If your curved image component is ```html <a-curvedimage id="one" src="#first" transparent="true" height="3" radius="5" theta-length="40" rotation="0 280 0" position="0 0.8 0"> </a-curvedimage>```
+Example: If your curved image component is ```html <a-curvedimage id="three" src="#third" transparent="true" height="3" radius="5" theta-length="40" rotation="0 180 0" position="0 0.8 0"> </a-curvedimage>```
 
- Then your javascript will be ```document.querySelector("#one").addEventListener('click', function() {window.location.href = "demos/1/index.html";});```
+ Then your javascript will be ```document.querySelector("#three").addEventListener('click', function() {window.location.href = "demos/3/index.html";});```
 
- Start editing gallery.html from line 105.
+ Start editing gallery.html from line 105. This is what the code you add should look like:
+
+ ```
+ document.querySelector("#three").addEventListener('click', function() {
+                 window.location.href = "demos/3/index.html";
+             });
+ ```
 
  Commit your changes.
 
- Now you can test your app here and check if all the links are working:[gallery.html](https://github.ncsu.edu/YOUR_UNITYID/360-tutorial/blob/master/gallery.html) in your repository.   
+### Task 5B - Testing ([helper video](https://youtu.be/IDxwfLmBxzU))
+ Now you can test your app here and check if all the links are working in your repository.
 
-### Additional Work: Going Deeper with A-Frame
-You have now worked with the major components of A-Frame to create your own gallery, and you can stop here. If you'd like to go deeper, let's take a look at some remaining concepts.
+### Add more images
+Now that you have had practice adding one image, you can add more images to your gallery using the same process.
 
-In our gallery.html
-First part is the ***header section*** of our HTML file.
+### Going Deeper with A-Frame
+You have now worked with the major components of A-Frame to create your own gallery, and you can stop here. To better understand the code, let's take a look at some remaining concepts:
+
+In our gallery.html file:
+The first part is the ***header section*** of our HTML file.
+
 Here we are just linking our aframe.js
-![header](/readme_files/head.png "header")
+
+<img src="/readme_files/head.png" width="500"></img>
 
 Next comes setting up ***A-scene***  
 
 A scene is represented by the `<a-scene>` element. The scene contains all entities.  
-Functions of A-scene are to:
+The functions of `<a-scene>` are to:
 - Add default canvas, renderer camera and lights
 - Set up VREffect
 - Add UI to Enter VR that calls WebVR API
@@ -216,7 +246,7 @@ The first section in a-scene is to add assets.
 We place all our assets in one place to preload and cache assets for better performance, as we did in our app to add all images in the assets section.  
 
 Next we add all the things that we want to appear on our screen.
-In our case we add all the image components.
+In our case we add all the image components:
 ![Image Components](/readme_files/image_components.png "Image Components")
 
 Next is adding sky and light components and setting up the camera and cursor.  
@@ -228,5 +258,5 @@ Next is adding sky and light components and setting up the camera and cursor.
 Then we finally add our javascript to load VR mode automatically and link images
 ![Auto enter Vr Script](/readme_files/js_script.png "Auto-enter Vr Script")
 
-### You can extend this app
-https://pages.github.ncsu.edu/smsejwan/a-frame-gallery/homepage.html
+### A-Frame Documentation
+You can extend your app and make other webVR projects. To find out more, see the A-Frame documentation: https://aframe.io/docs/0.5.0/introduction/
